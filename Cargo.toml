@@ -1,0 +1,33 @@
+[package]
+name = "actix-sea-orm"
+version = "0.1.0"
+edition = "2024"
+authors = ["Ashaffah"]
+
+[dependencies]
+actix-cors = "0.7.1"
+actix-files = "0.6.6"
+actix-http = "3.11.0"
+actix-session = { version = "0.10.1", features = ["cookie-session"] }
+actix-web = "4"
+async-stream = "0.3.6"
+dotenvy = "0.15"
+entity = { path = "./entity" }
+env_logger = "0.11.8"
+futures = "0.3.31"
+image = "0.25.6"
+log = "0.4.27"
+qirust = "0.1.30"
+sea-orm = { version = "1.1.12", features = [
+  "sqlx-mysql",
+  "runtime-tokio-native-tls",
+  "macros",
+] }
+serde = "1.0.219"
+
+[lib]
+name = "apps"
+path = "src/lib.rs"
+
+[workspace]
+members = ["migration", "entity", "seeder"]

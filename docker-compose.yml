@@ -1,0 +1,17 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: actix-sea-orm
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: actix_example
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: actix_example
+      MYSQL_PASSWORD:
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
