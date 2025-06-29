@@ -20,7 +20,7 @@ pub fn get_server_host() -> String {
 }
 
 pub fn get_server_port() -> u16 {
-    env::var("PORT")
+    env::var("SERVER_PORT")
         .ok()
         .and_then(|v| v.parse::<u16>().ok())
         .unwrap_or(8080)
