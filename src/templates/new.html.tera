@@ -1,0 +1,38 @@
+{% extends "layout.html.tera" %} 
+{% block content %}
+<div class="row">
+  <h4>New Post</h4>
+  <form action="/" method="post" class="twelve columns">
+    <div class="twelve columns">
+      <label for="title">Title</label>
+      <input
+        type="text"
+        placeholder="Enter title"
+        name="title"
+        id="title"
+        class="u-full-width"
+        required
+        autofocus
+      />
+    </div>
+    <div class="twelve columns">
+      <label for="text">Content</label>
+      <textarea
+        placeholder="Enter content"
+        name="text"
+        id="text"
+        class="u-full-width"
+        required
+      ></textarea>
+    </div>
+    <div class="twelve columns">
+      <div class="two columns">
+        <a href="/" class="button">Cancel</a>
+      </div>
+      <div class="two columns u-pull-right">
+        <input type="submit" value="Save Post" class="button-primary" />
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock content %}

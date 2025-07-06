@@ -117,7 +117,7 @@ async fn generate_qrs(info: web::Query<QR>) -> Result<HttpResponse> {
         _ => FrameStyle::None,
     };
     let size = info.size.unwrap_or((500, 500));
-    let scale = info.scale.unwrap_or(4);
+    let scale = info.scale.unwrap_or(16);
     let ecc = match info.ecc.as_deref() {
         Some("L") => QrCodeEcc::Low,
         Some("M") => QrCodeEcc::Medium,
@@ -143,7 +143,7 @@ async fn generate_qrs(info: web::Query<QR>) -> Result<HttpResponse> {
 
     let buffer = generate_frameqr_buffer(
         qr,
-        "assets/images/actura-logo.png",
+        "src/static/images/gh.png",
         Some(scale),
         Some(qr_color),
         Some(border_modules),

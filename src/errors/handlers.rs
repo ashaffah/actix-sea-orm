@@ -1,9 +1,14 @@
-use actix_web::{ HttpResponse, Responder, Result };
+use actix_web::{ web, HttpResponse, Responder };
+use tera::Context;
 
-pub async fn not_found() -> Result<impl Responder> {
-    Ok(
-        HttpResponse::NotFound()
-            .content_type("application/json")
-            .json(r#"{"error": "Route not found"}"#)
-    )
+use crate::configs::app::AppsConfig;
+
+pub async fn not_found(ctx: web::Data<AppsConfig>) -> impl Responder {
+    let context = Context::new();
+
+    let rendered = ctx.templates
+        .render("404.html.tera", &context)
+        .unwrap_or_else(|_| "<h1>404 - Page Not Found</h1>".to_string());
+
+    HttpResponse::NotFound().content_type("text/html").body(rendered)
 }

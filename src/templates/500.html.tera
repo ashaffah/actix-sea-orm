@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>500 - Internal Server Error</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 72px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 24px;
+            margin-top: 0;
+        }
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #d9534f;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+<body>
+    <h1>500</h1>
+    <p>Oops! Something went wrong on our end. Please try again later.</p>
+    <a href="/">Go Back Home</a>
+</body>
+</html>
